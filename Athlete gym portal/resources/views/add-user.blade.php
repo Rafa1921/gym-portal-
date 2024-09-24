@@ -55,7 +55,7 @@
                         <div class="mt-3">
                             <label for="phone" value="Phone" class="block text-sm font-medium text-gray-700">Phone</label>
                             <input id="phone" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="phone"/>
-                            <span id="phone-error" class="text-red-500 text-sm" style="display:none;">Phone number must be between 10-15 digits.</span>
+                            <span id="phone-error" class="text-red-500 text-sm" style="display:none;">Phone number must be between 11 digits.</span>
                         </div>
 
                         <!-- Contract -->
@@ -117,52 +117,13 @@
             }
         });
 
-        document.getElementById('phone').addEventListener('blur', function() {
-            var phoneField = document.getElementById('phone');
-            var phone = phoneField.value;
-            var phoneError = document.getElementById('phone-error');
-
-            // Check if the phone number has 10-15 digits
-            if (!/^\d{10,15}$/.test(phone)) {
-                phoneError.style.display = 'block'; // Show the error message
-            } else {
-                phoneError.style.display = 'none'; // Hide the error message
-            }
-        });
-
-    
-        document.getElementById('email').addEventListener('blur', function() {
-            var emailField = document.getElementById('email');
-            var email = emailField.value;
-            var emailError = document.getElementById('email-error');
-
-            // Check if the email contains "@" and has a valid format
-            if (email.indexOf('@') === -1 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                emailError.style.display = 'block'; // Show the error message
-            } else {
-                emailError.style.display = 'none'; // Hide the error message
-            }
-        });
-
-        document.getElementById('password').addEventListener('blur', function() {
-            var passwordField = document.getElementById('password');
-            var password = passwordField.value;
-            var passwordError = document.getElementById('password-error');
-
-            // Check if the password has at least 8 characters
-            if (password.length < 8) {
-                passwordError.style.display = 'block'; // Show the error message
-            } else {
-                passwordError.style.display = 'none'; // Hide the error message
-            }
-        });
 
         document.getElementById('phone').addEventListener('blur', function() {
             var phoneField = document.getElementById('phone');
             var phone = phoneField.value;
             var phoneError = document.getElementById('phone-error');
 
-            // Check if the phone number has 10-15 digits
+            // Check if the phone number has 11 digits
             if (!/^\d{10,11}$/.test(phone)) {
                 phoneError.style.display = 'block'; // Show the error message
             } else {
